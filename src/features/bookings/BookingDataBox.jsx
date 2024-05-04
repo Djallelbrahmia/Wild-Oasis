@@ -107,17 +107,17 @@ function BookingDataBox({ booking }) {
     created_at,
     startDate,
     endDate,
-    numNights,
+    numOfNight: numNights,
     numGuests,
     cabinPrice,
-    extrasPrice,
+    extraPrice: extrasPrice,
     totalPrice,
     hasBreakfast,
     observations,
     isPaid,
-    guests: { fullName: guestName, email, country, countryFlag, nationalID },
+    guest: { fullName: guestName, email, country, countryFlag, nationalID },
     cabins: { name: cabinName },
-  } = booking;
+  } = !booking ? {} : booking;
 
   return (
     <StyledBookingDataBox>

@@ -4,6 +4,8 @@ import Button from "../ui/Button";
 import Heading from "../ui/Heading";
 import Row from "../ui/Row";
 import CreateCabinForm from "../features/cabins/CreateCabinForm";
+import AddCabin from "../features/cabins/AddCabin";
+import CabinTableOperations from "../features/cabins/CabinTableOperations";
 
 function Cabins() {
   const [showForm, setShowForm] = useState(false);
@@ -11,16 +13,13 @@ function Cabins() {
     <>
       <Row type="horizontal">
         <Heading as="h1">All cabins</Heading>
-        <p>TEST</p>
+        <CabinTableOperations />
       </Row>
       <Row>
         <CabinTable />
       </Row>
 
-      <Button onClick={() => setShowForm((showForm) => !showForm)}>
-        {showForm ? "Close Form" : "Add New Cabin"}
-      </Button>
-      {showForm && <CreateCabinForm />}
+      <AddCabin />
     </>
   );
 }
